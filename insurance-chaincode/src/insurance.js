@@ -312,7 +312,7 @@ let InsuranceChaincode = class {
    * {
    *    "policyId":"2211",
    *    "policyPayout":100,
-   *    "rainfallAmount":
+   *    "rainfallAmount":"25",
    *    "insuredUserName":"edge",
    *    "carrierNumber":"6322"
    * }
@@ -361,5 +361,17 @@ let InsuranceChaincode = class {
     let policyId = 'policy' + json['policyId'];
     let carrierNumber = 'carrier' + json['carrierNumber'];
     let insuredUserName = "insured" + json["insuredUserName"];
+    const policyQuery = await queryByKey(stub, policyId);
+    const parsedPolicy = JSON.parse(policyQuery);
+
+    // Hard-coding rainfall for now
+    if (10 < parsedPolicy.rainfallAmount) {
+        // payout path
+        console.log(`10 inches of rainfall ocurred, policy required ${parsedPolicy.rainfallAmount} or more. Initiating payout`);
+        console.log('payout made for ' + insuredUserName);
+    } else {
+        // non-payout
+        console.log(`No payout necessary, ${parsedPolicy.rainfallAmount} is less than actual rainfall of 10`);
+    }
   }
 };
