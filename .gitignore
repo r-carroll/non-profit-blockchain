@@ -7,3 +7,5 @@ ngo-rest-api/fabric-client-kv-org1
 ngo-ui/node_modules
 ngo-ui/Config
 .DS_Store
+ngo-rest-api/fabric-client-certs-org1/*
+ngo-rest-api/fabric-client-keys-org1/*
