@@ -1,3 +1,3 @@
-module github.com/r-carroll/go-demo
+module go-demo
 
-go 1.12
+go 1.17

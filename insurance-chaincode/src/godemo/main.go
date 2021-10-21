@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/r-carroll/godemo/models"
+	"go-demo/models"
 )
 
 func main() {
